@@ -1,16 +1,21 @@
+pub mod constants;
+pub mod error;
+pub mod instructions;
+pub mod state;
+
 use anchor_lang::prelude::*;
 
-declare_id!("Md24hSwkYVniz5pakfn53unmQQGrygZ4uCuuiykAbSH");
+pub use constants::*;
+pub use instructions::*;
+pub use state::*;
+
+declare_id!("6yxyBEwKowMWfYkuvUi9USF8coef9r55MqPfYouCmg3w");
 
 #[program]
 pub mod trident_one {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
-        Ok(())
+        initialize::handler(ctx)
     }
 }
-
-#[derive(Accounts)]
-pub struct Initialize {}

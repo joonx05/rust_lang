@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-trident_one = "Md24hSwkYVniz5pakfn53unmQQGrygZ4uCuuiykAbSH"
+trident_one = "6yxyBEwKowMWfYkuvUi9USF8coef9r55MqPfYouCmg3w"
 
 [registry]
 url = "https://api.apr.dev"
