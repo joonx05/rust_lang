@@ -1,13 +1,10 @@
-pub mod constants;
-pub mod error;
-pub mod instructions;
-pub mod state;
-
 use anchor_lang::prelude::*;
 
-pub use constants::*;
+pub mod error;
+pub mod state;
+pub mod instructions;
+
 pub use instructions::*;
-pub use state::*;
 
 declare_id!("6yxyBEwKowMWfYkuvUi9USF8coef9r55MqPfYouCmg3w");
 
@@ -15,7 +12,15 @@ declare_id!("6yxyBEwKowMWfYkuvUi9USF8coef9r55MqPfYouCmg3w");
 pub mod trident_one {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn initialize(
+        ctx: Context<Initialize>, 
+        input1: u8,
+        input2: u8,
+        name: String,
+        symbol: String,
+        uri: String
+    ) -> Result<()> {
+        initialize_ix(ctx, input1, input2, name, symbol, uri)
     }
 }
+
